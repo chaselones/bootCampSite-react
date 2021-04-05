@@ -54,6 +54,7 @@ class Directory extends React.Component {
                 <div className="row">
                     {directory}
                 </div>
+                {/* Example of parent/child prop relationship below: */}
                 {/* <div className="row">
                     <ExampleParentComponent />
                 </div> */}
@@ -91,4 +92,18 @@ class Directory extends React.Component {
 //         )
 //     }
 // }
+
+//Skeleton for a React Class component:
+// class ThisClass extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.state={};
+//     }
+//     render(){
+//         return(
+//             <h1>This is a heading 1</h1>
+//         );
+//     }
+// }
+
 export default Directory;
