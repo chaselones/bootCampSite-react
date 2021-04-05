@@ -39,8 +39,11 @@ class Directory extends React.Component {
     }
 
     render() {
+        //If you tell react to render an array, it automatically renders each element in the array.
         const directory = this.state.campsites.map((campsite)=>{
+            //This is a function return, not the react render function return
             return(
+                //The JSX elements below are now added to a new array called 'directory'
                 <div key={campsite.id} className="col mt-3">
                     <img src={campsite.image} alt={campsite.name} />
                     <h2>{campsite.name}</h2>
@@ -52,6 +55,7 @@ class Directory extends React.Component {
         return(
             <div className="container">
                 <div className="row">
+                    {/* Rendering the array: */}
                     {directory}
                 </div>
                 {/* Example of parent/child prop relationship below: */}
@@ -62,6 +66,8 @@ class Directory extends React.Component {
         );
     }
 }
+
+export default Directory;
 
 //-----------------------------------------------------------
 //Parent component passing state to a child component as prop:
@@ -105,5 +111,3 @@ class Directory extends React.Component {
 //         );
 //     }
 // }
-
-export default Directory;
