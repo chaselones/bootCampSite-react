@@ -37,7 +37,7 @@ class Directory extends React.Component {
             //This is a function return, not the react render function return
             return (
                 //The JSX elements below are now added to a new array called 'directory'
-                //ID required for top level item in the array (this being the div)
+                //ID required for top level item in the array when rendering an array(this being the div)
                 <div key={campsite.id} className="col-md-5 m-1">
                     <Card onClick={() => this.onCampSiteSelect(campsite)}>
                         <CardImg width="100%" src={campsite.image} alt={campsite.name} />
