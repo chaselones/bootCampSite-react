@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -7,16 +7,24 @@ class Header extends Component {
     constructor(props) {
         super(props);
 
+        // Bind the toggleNav to this (header component, rather than the parent component)
         this.toggleNav = this.toggleNav.bind(this);
         this.state = {
-          isNavOpen: false
+            isNavOpen: false
         };
     }
 
     toggleNav() {
-        this.setState({
-            isNavOpen: !this.state.isNavOpen
-        });
+        // this.setState({
+        //     isNavOpen: !this.state.isNavOpen
+        // });
+
+        // better way to update state is with a callback which takes an arguement of the previous state, because setState is asyncronous
+        this.setState((prevState) => {
+            return {
+                isNavOpen: !prevState.isNavOpen
+            }
+        })
     }
 
     render() {
