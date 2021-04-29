@@ -22,6 +22,7 @@ function RenderCampsite({ campsite }) {
         </div>
     );
 }
+
 function RenderComments({ comments, addComment, campsiteId }) {
     if (comments) {
         return (
@@ -87,6 +88,7 @@ class CommentForm extends Component {
                                     <option>5</option>
                                 </Control.select>
                             </div>
+
                             <div className="form-group">
                                 <Label htmlFor="author">Your Name</Label>
                                 <Control.text model=".author" id="author" name="author"
@@ -97,6 +99,7 @@ class CommentForm extends Component {
                                         maxLength: maxLength(15)
                                     }}
                                 />
+
                                 <Errors
                                     className="text-danger"
                                     model=".author"
@@ -107,7 +110,9 @@ class CommentForm extends Component {
                                         maxLength: 'Must be 15 characters or less'
                                     }}
                                 />
+
                             </div>
+
                             <div className="form-group">
                                 <Label htmlFor="text">Comment</Label>
                                 <Control.textarea model=".text" id="text" name="text"
@@ -115,6 +120,7 @@ class CommentForm extends Component {
                                     className="form-control"
                                 />
                             </div>
+
                             <Button type="submit" color="primary">
                                 Submit
                             </Button>
